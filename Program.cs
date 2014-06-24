@@ -120,16 +120,15 @@ namespace Disemvoweler
 		static void GuessThatNumber ()
 		{
 			//generate number <100
-
+			Random randomNumberGenerator = new Random ();
+			int randomNumber = randomNumberGenerator.Next (1, 101);
 			//take user guess
 			string guess;
 			int guessNum;
 			int guessCount = 0;
 			bool playing = true;
 			while (playing) {
-				//generate number <100
-				Random randomNumberGenerator = new Random ();
-				int randomNumber = randomNumberGenerator.Next (1, 101);
+				
 				Console.WriteLine ("Enter your guess!");
 				guess = Console.ReadLine ();
 				//convert guess to int
@@ -142,6 +141,12 @@ namespace Disemvoweler
 					string play = Console.ReadLine ();
 					if (play == "n" || play == "N") {
 						playing = false;
+					}
+					else if((play == "y" || play == "Y"){
+					//initialize new game
+					guessCount = 0;
+					Random randomNumberGenerator = new Random ();
+					int randomNumber = randomNumberGenerator.Next (1, 101);
 					}
 				}
 			//test for too big
